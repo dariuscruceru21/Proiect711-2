@@ -1,13 +1,11 @@
 #include <iostream>
+using namespace std;
 
-
-void test_func(){
-    std::cout << "Test Func" << std::endl;
+int test_func(int a, int b){
+    return a + b;
 }
 
 int main() {
-    std::cout << "Cruceru Darius" << std::endl;
-    std::cout << "Eminovici Robert" << std::endl;
-    test_func();
+    std::cout << test_func(1, 2);
     return 0;
 }
