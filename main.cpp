@@ -4,6 +4,7 @@ using namespace std;
 int test_func(int a, int b){
     return a + b;
 }
+//TODO sterge asta Eminovici
 
 int main() {
 
