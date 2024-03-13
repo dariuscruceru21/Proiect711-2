@@ -6,6 +6,11 @@ int test_func(int a, int b){
 }
 //TODO sterge asta Eminovici
 
+void scrieTextSatanic()
+{
+    cout<<"DSA";
+}
+
 int main() {
 
     std::cout << test_func(1, 2);
