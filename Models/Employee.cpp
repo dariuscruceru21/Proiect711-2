@@ -4,14 +4,11 @@
 
 #include "Employee.h"
 
-Employee::Emplyee(std::string email, std::string password, std::string firstName, std::string lastName, std::string position, std::string birthDate, std::string initials, std::double salary, std::string observations) {
-    this->email = email;
-    this->password = password;
-    this->firstName = firstName;
-    this->lastName = lastName;
+Employee::Employee(std::string email, std::string password, std::string firstName, std::string lastName, std::string position, std::string birthDate, std::string initials, double salary, std::string observations){
     this->position = position;
     this->birthDate = birthDate;
     this->initials = initials;
     this->salary = salary;
     this->observations = observations;
+    User(email, password, firstName, lastName);
 }
