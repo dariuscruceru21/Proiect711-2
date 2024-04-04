@@ -10,7 +10,7 @@ private:
     std::string carBrand;
     std::string buildYear;
     std::string mileage;
-    int dailyPrice;
+    float dailyPrice;
     std::string fuelType;
     std::string transmission;
     std::string color;
@@ -20,16 +20,24 @@ private:
 
 public:
     CarHandling(std::string numberPlate, std::string model, std::string carBrand, std::string buildYear,
-                std::string mileage, int dailyPrice, std::string fuelType, std::string transmission, std::string color,
+                std::string mileage, float dailyPrice, std::string fuelType, std::string transmission, std::string color,
                 std::string description);
 
-    void changeCarSpecs(std::string numberPlate , std::string model , std::string carBrand , std::string buildYear , std::string mileage , int dailyPrice , std::string fuelType , std::string transmission , std::string color , std::string description);
+    void changeCarSpecs(std::string numberPlate , std::string model , std::string carBrand , std::string buildYear , std::string mileage , float dailyPrice , std::string fuelType , std::string transmission , std::string color , std::string description);
 
     ~CarHandling(bool isDriving);
 
     void carDeactivation(bool isActive);
 
-    string carSearch(bool isDriving);
+    std::string carSearch(bool isDriving);
+
+    std::string carSearchByPlateNumber(std::string numberPlate);
+
+    string serachSorted("carordering");
+
+    bool valid(std::string numberPlate, std::string buildYear, std::string mileage, float dailyPrice);
+    
+    
 
 };
 
