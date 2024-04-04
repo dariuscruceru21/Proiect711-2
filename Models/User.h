@@ -16,6 +16,8 @@ public:
     //constructor for User class
     User(std::string email, std::string password, std::string firstName, std::string lastName);
 
+    User();
+
 };
 
 
