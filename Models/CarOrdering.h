@@ -4,7 +4,6 @@
 #include <ctime>
 #include <iostream>
 
-using namespace std;
 
 class CarOrdering {
 private:
@@ -15,12 +14,12 @@ private:
     tm* begin = localtime(&now);
     tm* end = localtime(&now);
 
-    string status;
+    std::string status;
     //obj auto
     //obj kunde
     // obj mitarbeiter
     float moneySum;
-    string observation;
+    std::string observation;
 
 public:
 
