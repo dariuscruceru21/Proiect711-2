@@ -33,5 +33,4 @@ void CarOrdering::changeStatus() {
 
     else if(currentTime >= begin )
             status = "Order";
-
 }
