@@ -6,29 +6,25 @@
 #define PROIECT711_2_CAR_H
 
 #include <string>
-using namespace std;
+
 class Car {
 private:
-    string licensePlate;
-    string model;
-    string brand;
+    std::string licensePlate;
+    std::string model;
+    std::string brand;
     unsigned int firstRegistrationYear;
     unsigned int mileage;
     float dailyPrice;
-    string fuelType;
-    string transmission;
-    string color;
-    string observation;
+    std::string fuelType;
+    std::string transmission;
+    std::string color;
+    std::string observation;
 public:
     // Car constructor
-    Car(std::string licensePlate, std::string model, std::string brand,
-        unsigned int firstRegistrationYear, unsigned int mileage,
-        float dailyPrice, std::string fuelType, std::string transmission,
-        std::string color, std::string observation): licensePlate(licensePlate), model(model), brand(brand),
-              firstRegistrationYear(firstRegistrationYear), mileage(mileage),
-              dailyPrice(dailyPrice), fuelType(fuelType),
-              transmission(transmission), color(color),
-              observation(observation) {}
+    Car(std::string Plate_License, std::string Model, std::string Brand,
+        unsigned int FirstRegistrationYear, unsigned int Mileage,
+        float DailyPrice, std::string FuelType, std::string Transmission,
+        std::string Color, std::string Observation);
 };
 
 
