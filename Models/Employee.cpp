@@ -11,4 +11,7 @@ Employee::Employee(std::string email, std::string password, std::string firstNam
     this->salary = salary;
     this->observations = observations;
     User(email, password, firstName, lastName);
+
 }
+
+Employee::Employee() {}
