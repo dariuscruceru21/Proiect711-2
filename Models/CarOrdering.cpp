@@ -23,3 +23,15 @@ CarOrdering::CarOrdering(User user, tm* end){
 tm CarOrdering::getOrderDate() {
     return *orderDate;
 }
+
+void CarOrdering::changeStatus() {
+    time_t now = time(0);
+    tm *currentTime = localtime(&now);
+
+    if(currentTime >= end )
+        status = "Completed";
+
+    else if(currentTime >= begin )
+            status = "Order";
+
+}

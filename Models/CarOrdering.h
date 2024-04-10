@@ -4,27 +4,31 @@
 #include <ctime>
 #include <iostream>
 #include "User.h"
+#include "CarHandling.h"
+#include "Employee.h"
 
 class CarOrdering{
 private:
     int orderNumber;
 
-    time_t now = time(0);
-    tm* orderDate = localtime(&now);
-    tm* begin = localtime(&now);
-    tm* end = localtime(&now);
+
+    tm* orderDate;
+    tm* begin;
+    tm* end;
 
     std::string status;
-    //obj auto
+    //CarHandling car;/** TODO */
     User user;
-    //obj mitarbeiter
+    //Employee employee; /** TODO */
     float moneySum;
     std::string observation;
 
 public:
     CarOrdering(User user, tm* begin, tm* end);
-    CarOrdering(/*Car car, */User user, tm* end);
+    CarOrdering(/**CarHandling car*/ User user, tm* end);
     tm getOrderDate();
+
+    void changeStatus();
 
 };
 
