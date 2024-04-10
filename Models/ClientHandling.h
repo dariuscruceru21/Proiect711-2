@@ -29,6 +29,9 @@ class ClientHandling {
         void searchClientsByEmail(std :: string email);
         void searchClientsByName(std::string name, std::string surname);
         void searchClientsByPhone(std::string phoneNumber);
+
+
+
 };
 
 
