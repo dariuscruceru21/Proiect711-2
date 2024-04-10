@@ -1,6 +1,7 @@
 //
 // Created by scoti on 10.04.2024.
 //
+#include "Employee.h"
 
 #ifndef PROIECT711_2_ADMIN_H
 #define PROIECT711_2_ADMIN_H
