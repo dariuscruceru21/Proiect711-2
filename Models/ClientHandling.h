@@ -4,7 +4,7 @@
 #include <string>
 #ifndef PROIECT711_2_CLIENTHANDLING_H
 #define PROIECT711_2_CLIENTHANDLING_H
-
+#include "Client.h"
 
 class ClientHandling {
     private:
@@ -30,6 +30,18 @@ class ClientHandling {
         void searchClientsByName(std::string name, std::string surname);
         void searchClientsByPhone(std::string phoneNumber);
         void searchClientsByCar(std::string model);
+
+
+        ////validations
+        bool uniqueEmail(Client);
+        bool isInCorrectFormatEmail(Client);
+        bool isInCorrectFormatPhone(Client);
+        bool allCompletedWhenGDPRDeletedFalse(Client);
+        bool firstNameAndLastNameGDPRDeletedTrue(Client);
+
+
+
+
 };
 
 
