@@ -3,9 +3,9 @@
 
 #include <ctime>
 #include <iostream>
+#include "User.h"
 
-
-class CarOrdering {
+class CarOrdering{
 private:
     int orderNumber;
 
@@ -16,13 +16,15 @@ private:
 
     std::string status;
     //obj auto
-    //obj kunde
-    // obj mitarbeiter
+    User user;
+    //obj mitarbeiter
     float moneySum;
     std::string observation;
 
 public:
-
+    CarOrdering(User user, tm* begin, tm* end);
+    CarOrdering(/*Car car, */User user, tm* end);
+    tm getOrderDate();
 
 };
 
