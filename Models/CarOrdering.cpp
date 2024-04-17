@@ -45,7 +45,7 @@ void CarOrdering::changeStatus() {
 }
 
 int CarOrdering::changeOrder(int orderNumber,Employee employee) {
-    //if(employee == employee) // TODO
+    //if(employee == employee) // TODO - waiting for other developers
     if (status == "Completed") {
         return 0;
     }
