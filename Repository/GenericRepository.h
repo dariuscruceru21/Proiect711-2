@@ -19,7 +19,6 @@ public:
     void updateFile(std::string filename, int id);//updates object with goven id
     void addToFile(std::string filename);//adds a new object
 
-
 };
 
 
