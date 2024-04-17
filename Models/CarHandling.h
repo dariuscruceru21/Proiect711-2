@@ -33,7 +33,7 @@ public:
 
     std::string carSearchByPlateNumber(std::string numberPlate);
 
-    string serachSorted("carordering");
+    std::string serachSorted("carordering");
 
     bool valid(std::string numberPlate, std::string buildYear, std::string mileage, float dailyPrice);
     
