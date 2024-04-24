@@ -3,3 +3,8 @@
 //
 
 #include "ClientHandling.h"
+
+
+bool ClientHandling::isInCorrectFormatEmail(Client c) {
+    std::string a = c.getUserEmail();
+}
