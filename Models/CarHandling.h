@@ -1,6 +1,7 @@
 #ifndef DEMKU_DOMINIK_CARHANDLING_H
 #define DEMKU_DOMINIK_CARHANDLING_H
 
+#include <vector>
 #include <string>
 
 class CarHandling {
@@ -16,7 +17,8 @@ private:
     std::string color;
     std::string description;
     bool isActive = true;
-    bool isDriving;
+    bool isDriving = true;
+    std::vector<CarHandling> cars;
 
 public:
     CarHandling(std::string numberPlate, std::string model, std::string carBrand, std::string buildYear,
@@ -25,13 +27,13 @@ public:
 
     void changeCarSpecs(std::string numberPlate , std::string model , std::string carBrand , std::string buildYear , std::string mileage , float dailyPrice , std::string fuelType , std::string transmission , std::string color , std::string description);
 
-    ~CarHandling(bool isDriving);
+    ~CarHandling();
 
     void carDeactivation(bool isActive);
 
-    std::string carSearch(bool isDriving);
+    bool carSearch(std::string numberPlate);
 
-    std::string carSearchByPlateNumber(std::string numberPlate);
+    //std::string carSearchByPlateNumber(std::string numberPlate);
 
     std::string serachSorted("carordering");
 
