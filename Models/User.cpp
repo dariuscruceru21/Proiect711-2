@@ -5,7 +5,8 @@
 #include "User.h"
 
 
-User::User(std::string email, std::string password, std::string firstName, std::string lastName) {
+User::User(int id,std::string email, std::string password, std::string firstName, std::string lastName) {
+    this->id = id;
     this->email = email;
     this->password = password;
     this->firstName = firstName;

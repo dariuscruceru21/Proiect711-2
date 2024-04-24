@@ -11,7 +11,8 @@ class Client: public User{
         std::string phoneNumber;
 
     public:
-        Client(std::string email, std::string password, std::string firstName, std::string lastName, std::string phoneNumber, bool gdpr);
+        Client(int id, std::string email, std::string password, std::string firstName, std::string lastName, std::string phoneNumber, bool gdpr);
+
         Client();
 
 

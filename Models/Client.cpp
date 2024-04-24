@@ -6,11 +6,11 @@
 #include <string>
 
 
-Client::Client(std::string email, std::string password, std::string firstName, std::string lastName,
+Client::Client(int id,std::string email, std::string password, std::string firstName, std::string lastName,
                std::string telefonNumber, bool gdpr) {
     this->phoneNumber = telefonNumber;
     this->gdpr = gdpr;
-    User(email,password,firstName,lastName);
+    User(id,email,password,firstName,lastName);
 }
 
 Client::Client() {}

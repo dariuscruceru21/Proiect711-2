@@ -7,6 +7,7 @@
 
 class User {
 private:
+    int id;
     std::string email;
     std::string password;
     std::string firstName;
@@ -14,7 +15,7 @@ private:
 
 public:
     //constructor for User class
-    User(std::string email, std::string password, std::string firstName, std::string lastName);
+    User(int id,std::string email, std::string password, std::string firstName, std::string lastName);
 
     User();
 
