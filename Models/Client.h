@@ -12,7 +12,6 @@ class Client: public User{
 
     public:
         Client(int id, std::string email, std::string password, std::string firstName, std::string lastName, std::string phoneNumber, bool gdpr);
-
         Client();
 
 
