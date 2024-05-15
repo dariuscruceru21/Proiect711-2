@@ -6,7 +6,7 @@
 #define PROIECT711_2_CLIENTHANDLING_H
 #include "Client.h"
 
-class ClientHandling {
+class ClientHandling : Client{
     private:
         int ID;
         std :: string name, surname, email, phoneNumber, address, notes;
@@ -33,11 +33,13 @@ class ClientHandling {
 
 
         ////validations
-        bool uniqueEmail(Client);
-        bool isInCorrectFormatEmail(Client);
-        bool isInCorrectFormatPhone(Client);
-        bool allCompletedWhenGDPRDeletedFalse(Client);
-        bool firstNameAndLastNameGDPRDeletedTrue(Client);
+        bool uniqueEmail(Client c);
+        //email format: firstname.lastname@smth.com
+        bool isInCorrectFormatEmail(Client c);
+        //phone format: +00 123456789
+        bool isInCorrectFormatPhone(Client c);
+        bool allCompletedWhenGDPRDeletedFalse(Client c);
+        bool firstNameAndLastNameGDPRDeletedTrue(Client c);
 
 
 
