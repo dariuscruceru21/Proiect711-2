@@ -19,7 +19,7 @@ class ClientHandling {
         void createClient(int ID, std :: string name, std :: string  surname, std :: string email, std :: string  phoneNumber, std :: string  adress, std :: string  notes, bool gdprDeleted);
 
 
-        void changeClient(std :: string name = "", std :: string  surname = "", std :: string email = "", std :: string  phoneNumber = "", std :: string  adress = "", std :: string  notes = " ");
+        void changeClient(std :: string name, std :: string  surname = "", std :: string email = "", std :: string  phoneNumber = "", std :: string  adress = "", std :: string  notes = " ");
 
         void deleteClient(int ID);
 
