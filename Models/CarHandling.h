@@ -22,10 +22,13 @@ private:
 
 public:
     CarHandling(std::string numberPlate, std::string model, std::string carBrand, std::string buildYear,
-                std::string mileage, float dailyPrice, std::string fuelType, std::string transmission, std::string color,
+                std::string mileage, float dailyPrice, std::string fuelType, std::string transmission,
+                std::string color,
                 std::string description);
 
-    void changeCarSpecs(std::string numberPlate , std::string model , std::string carBrand , std::string buildYear , std::string mileage , float dailyPrice , std::string fuelType , std::string transmission , std::string color , std::string description);
+    void changeCarSpecs(std::string numberPlate, std::string model, std::string carBrand, std::string buildYear,
+                        std::string mileage, float dailyPrice, std::string fuelType, std::string transmission,
+                        std::string color, std::string description);
 
     ~CarHandling();
 
@@ -38,8 +41,7 @@ public:
     std::string serachSorted("carordering");
 
     bool valid(std::string numberPlate, std::string buildYear, std::string mileage, float dailyPrice);
-    
-    
+
 
 };
 
