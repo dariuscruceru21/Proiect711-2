@@ -4,9 +4,11 @@
 
 #include "string"
 #include "vector"
+#include "CarOrderRepository.h"
 
 template<typename T>
 class GenericRepository {
+    friend class CarOrderRepository;
 private:
     std::string filename;
 

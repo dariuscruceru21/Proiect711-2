@@ -26,11 +26,34 @@ private:
 public:
     CarOrdering(float moneySum, std::string observation, User user, tm *begin, tm *end, Car car,Employee employee1);
     CarOrdering(float moneySum, std::string observation, User user, tm *end, Car car,Employee employee1);
-    tm getOrderDate();
     void changeStatus();
+
+    void setOrderNr(int nr);
+    int getOrderNr() const;
+    void setOrderDate(tm &time);
+    tm getOrderDate();
+    void setBegin(tm time);
+    tm getBegin();
+    void setEnd(tm time);
+    tm getEnd();
+    void setStatus(std::string status);
+    std::string getStatus();
+    void setCar(Car car);
+    Car getCar();
+    void setUser(User user);
+    User getUser();
+    void setEmployee(Employee employee);
+    Employee getEmployee();
+    void setMoney(float sum);
+    float getMoney();
+    void setObservation(std::string observation);
+    std::string getObservation();
+
 
     //B.2 Nur Mitarbeiter durfen
     int changeOrder(int orderNumber,Employee employee);
+
+
 
 };
 
