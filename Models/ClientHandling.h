@@ -2,46 +2,57 @@
 // Created by Andra on 4/4/2024.
 //
 #include <string>
+
 #ifndef PROIECT711_2_CLIENTHANDLING_H
 #define PROIECT711_2_CLIENTHANDLING_H
+
 #include "Client.h"
 
-class ClientHandling : Client{
-    private:
-        int ID;
-        std :: string name, surname, email, phoneNumber, address, notes;
-        bool gdprDeleted;
+class ClientHandling : Client {
+private:
+    int ID;
+    std::string name, surname, email, phoneNumber, address, notes;
+    bool gdprDeleted;
 
 
-    public:
-        ClientHandling();
+public:
 
-        //aici sa se apeleze constructoru de la client
-        void createClient(int ID, std :: string name, std :: string  surname, std :: string email, std :: string  phoneNumber, std :: string  adress, std :: string  notes, bool gdprDeleted);
+    ClientHandling();
 
-
-        void changeClient(std :: string name = "", std :: string  surname = "", std :: string email = "", std :: string  phoneNumber = "", std :: string  adress = "", std :: string  notes = " ");
-
-        void deleteClient(int ID);
-
-        void listClients();
-
-        void searchClientsByEmail(std :: string email);
-        void searchClientsByName(std::string name, std::string surname);
-        void searchClientsByPhone(std::string phoneNumber);
-        void searchClientsByCar(std::string model);
+    //aici sa se apeleze constructoru de la client
+    void createClient(int ID, std::string name, std::string surname, std::string email, std::string phoneNumber,
+                      std::string adress, std::string notes, bool gdprDeleted);
 
 
-        ////validations
-        bool uniqueEmail(Client c);
-        //email format: firstname.lastname@smth.com
-        bool isInCorrectFormatEmail(Client c);
-        //phone format: +00 123456789
-        bool isInCorrectFormatPhone(Client c);
-        bool allCompletedWhenGDPRDeletedFalse(Client c);
-        bool firstNameAndLastNameGDPRDeletedTrue(Client c);
+    void
+    changeClient(std::string name = "", std::string surname = "", std::string email = "", std::string phoneNumber = "",
+                 std::string adress = "", std::string notes = " ");
+
+    void deleteClient(int ID);
+
+    void listClients();
+
+    void searchClientsByEmail(std::string email);
+
+    void searchClientsByName(std::string name, std::string surname);
+
+    void searchClientsByPhone(std::string phoneNumber);
+
+    void searchClientsByCar(std::string model);
 
 
+    ////validations
+    bool uniqueEmail(Client c);
+
+    //email format: firstname.lastname@smth.com
+    bool isInCorrectFormatEmail(Client c);
+
+    //phone format: +00 123456789
+    bool isInCorrectFormatPhone(Client c);
+
+    bool allCompletedWhenGDPRDeletedFalse(Client c);
+
+    bool firstNameAndLastNameGDPRDeletedTrue(Client c);
 
 
 };
