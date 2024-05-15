@@ -14,11 +14,14 @@ private:
     std::string position;
     std::string birthDate;
     std::string initials;
-    double salary;
+    double salary;///BY DEFAULT 100, CANT BE UNDER 100
     std::string observations;
 
 public:
-
+    ///
+    ///TODO:
+    /// CHANGE STATUS (ACTIVE / INACTIVE)
+    ///CREATE CUSTOMER
     Employee(int id,std::string email, std::string password, std::string firstName, std::string lastName, std::string position, std::string birthDate, std::string initials, double salary, std::string observations);
     Employee();
 };
