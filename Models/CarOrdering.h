@@ -25,8 +25,10 @@ private:
     std::string observation;
 
 public:
-    CarOrdering(float moneySum, std::string observation, User user, tm *begin, tm *end, Car car,Employee employee1);
-    CarOrdering(float moneySum, std::string observation, User user, tm *end, Car car,Employee employee1);
+    CarOrdering(float moneySum, std::string observation, User user, tm *begin, tm *end, Car car,
+                std::list <CarOrdering> repository);
+    CarOrdering(float moneySum, std::string observation, User user, tm *end, Car car, Employee employee1,
+                std::list <CarOrdering> repository);
     void changeStatus();
 
     void setOrderNr(int nr);
@@ -66,6 +68,21 @@ public:
 
     void totalSumOfATimeInterval(std::list<CarOrdering> repository, tm time, std::string type); //time is either a month or a year (ex. January or 2024)
                                                                                                 //type is either month or year
+
+
+    //B.5 Validierungen   --> wird jedes mal bei der Erstellung eines Objektes aufgerufen (im Konstruktor)
+    bool callAllValidationFunctions(Car car, std::list<CarOrdering> repository, tm begin, tm end,
+                                    std::string status, User user);
+
+    //if the car is already used on the given date, an error occurs
+    bool checkIfCarIsAlreadyUsed(Car car, std::list<CarOrdering> repository, tm begin, tm end);
+    //begin must be smaller than end
+    bool checkIfBeginIsSmallerOrEqualEnd(tm begin, tm end);
+    //a user is not allowed to have more than 5 reservations
+    bool userHasLessThanFiveReservations(User user, std::string status, std::list<CarOrdering> repository);
+    //order number is issued automatically by the system
+    int determineOrderNumber(std::list<CarOrdering> repository);   //numbers are made by maximum + 1  (ex. 1 2 3 5 6 7 --> 8)
+
 
 };
 
