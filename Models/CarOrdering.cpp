@@ -113,6 +113,16 @@ std::string CarOrdering::getObservation() {
 }
 
 
+
+void CarOrdering::writeAll() {
+    std::cout<<orderNumber<<" ordered on "<<orderDate<<"; from "<<begin<<" until "<<end
+        <<" (current status: "<<status<<"), total cost: "<<moneySum<<".\n";  //nu toate detaliile apar
+    std::cout<<"Ordered by "<<user.getUserLastName()<<", handled by"<<employee.getUserLastName()<<"\n";
+    std::cout<<"-->Observation: "<<observation<<"\n\n";
+}
+
+
+
 void CarOrdering::changeStatus() {
     time_t now = time(0);
     tm *currentTime = localtime(&now);
@@ -145,4 +155,48 @@ int CarOrdering::changeOrder(int orderNumber, Employee employee) {
             }
         }
     }
+}
+
+
+void CarOrdering::showAllOrdersInASpecificTimeInterval(std::list<CarOrdering> repository, tm start, tm end) {
+    std::list<CarOrdering> orderList;
+    for (CarOrdering obj: repository)
+    {
+        if (obj.begin >= &start && obj.end <= &end)   //object is to be written on the screen; add to orderList
+        {
+            orderList.push_back(obj);
+        }
+    }
+
+    orderList.sort(CarOrdering::compareByTotalPrice);
+
+    std::cout<<"All orders between the date of "<<&start<<" and "<<&end<<":\n";
+    for (CarOrdering i: orderList)
+    {
+        std::cout<<orderNumber<<": price-"<<moneySum<<", car-"<<car.brand<<", user-"<<user.getUserLastName()<<", employee-"<<employee.getUserLastName();
+    }
+}
+
+CarOrdering CarOrdering::searchOrderByOrderNumber(std::list<CarOrdering> repository, int orderNr) {
+    for (CarOrdering obj: repository)
+    {
+        if (obj.orderNumber == orderNr)
+            return obj;
+    }
+}
+
+void CarOrdering::totalSumOfATimeInterval(std::list<CarOrdering> repository, tm time, std::string type) {
+    if (type == "month")
+        for (CarOrdering obj: repository)
+        {
+            if (obj.begin->tm_mon <= time.tm_mon && obj.end->tm_mon >= time.tm_mon) //if the month is included in the order's time interval
+                std::cout<<orderNumber<<": price-"<<moneySum<<", car-"<<car.brand<<", user-"<<user.getUserLastName()<<", employee-"<<employee.getUserLastName();
+        }
+    else
+        for (CarOrdering obj: repository)
+        {
+            if (obj.begin->tm_year >= time.tm_year && obj.end->tm_year <= time.tm_year) //if the time is included in a year
+                std::cout<<orderNumber<<": price-"<<moneySum<<", car-"<<car.brand<<", user-"<<user.getUserLastName()<<", employee-"<<employee.getUserLastName();
+
+        }
 }
