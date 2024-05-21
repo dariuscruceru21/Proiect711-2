@@ -9,10 +9,6 @@
 #include "Client.h"
 
 class ClientHandling : Client {
-private:
-    int ID;
-    std::string name, surname, email, phoneNumber, address, notes;
-    bool gdprDeleted;
 
 
 public:
@@ -50,7 +46,6 @@ public:
     //phone format: +00 123456789
     bool isInCorrectFormatPhone(Client c);
 
-    bool allCompletedWhenGDPRDeletedFalse(Client c);
 
     bool firstNameAndLastNameGDPRDeletedTrue(Client c);
 
