@@ -1,4 +1,5 @@
 #include "CarOrdering.h"
+#include <fstream>
 
 CarOrdering::CarOrdering(float moneySum, std::string observation, User user, tm *begin, tm *end, Car car,
                          std::list <CarOrdering> repository) : car(car) {
@@ -166,11 +167,50 @@ int CarOrdering::changeOrder(int orderNumber, Employee employee) {
     }
 }
 
-std::list <CarOrdering> CarOrdering::removeOrder(std::list<CarOrdering> repo, int orderNr) {
+std::list <CarOrdering> CarOrdering::removeReservation(std::list<CarOrdering> repo, int orderNr) {
     std::list<CarOrdering>aux;
     for(CarOrdering obj: repo)
         if(obj.orderNumber != orderNr)
             aux.push_back(obj);
+    return aux;
+}
+
+std::list <CarOrdering> CarOrdering::changeReservation(std::list<CarOrdering> repo, int orderNr) {
+    std::list<CarOrdering>aux;
+    for(CarOrdering obj: repo)
+        if(obj.orderNumber != orderNr)
+            aux.push_back(obj);
+        else if( /*is admin*/){ /**TODO verification*/
+            int option;
+            std::cin >> option;
+
+            switch (option) {
+                case 1: {    //Admins
+
+                    break;
+                }
+                case 2: {
+
+                    break;
+                }
+            }
+        }
+        else if( /*is customer*/){
+            int option;
+            std::cin >> option;
+
+            switch (option) {
+                case 1: {    //customers
+
+                    break;
+                }
+                case 2: {
+
+                    break;
+                }
+            }
+        }
+}
     return aux;
 }
 
