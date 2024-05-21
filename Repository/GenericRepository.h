@@ -4,23 +4,34 @@
 
 #include "string"
 #include "vector"
+#include "CarOrderRepository.h"
+#include "fstream"
+#include "sstream"
+#include "iostream"
+
 
 template<typename T>
 class GenericRepository {
+    friend class CarOrderRepository;
 private:
     std::string filename;
 
-public:
-    std::vector<T> elements;//this contains an array with elements of classes,thats why we use template
 
-    GenericRepository();
-    void readFile(std::string filename);
-    void deleteFromFile(std::string filename, int id);//deletes object with given id
-    void updateFile(std::string filename, int id);//updates object with goven id
-    void addToFile(std::string filename);//adds a new object
+
+public:
+
+
+
+    GenericRepository(std::string filename);
+    static std::vector<T> readFromCSV(const std::string &filename);
+    static void writeToCSV(const std::string &filename, const std::vector<T> &objects);
+    virtual std::string toCsv()const = 0;
+    virtual void fromCsv(const std::string &csvLine) = 0;
 
 
 };
+
+
 
 
 #endif

@@ -1,43 +1,49 @@
 #ifndef DEMKU_DOMINIK_CARHANDLING_H
 #define DEMKU_DOMINIK_CARHANDLING_H
 
+#include <vector>
 #include <string>
+#include "Car.h"
 
-class CarHandling {
+class CarHandling : private Car{
 private:
-    std::string numberPlate;
-    std::string model;
-    std::string carBrand;
-    std::string buildYear;
-    std::string mileage;
-    float dailyPrice;
-    std::string fuelType;
-    std::string transmission;
-    std::string color;
-    std::string description;
     bool isActive = true;
-    bool isDriving;
+    bool isDriving = true;
+    std::vector<Car> cars;
 
 public:
-    CarHandling(std::string numberPlate, std::string model, std::string carBrand, std::string buildYear,
-                std::string mileage, float dailyPrice, std::string fuelType, std::string transmission, std::string color,
-                std::string description);
+    ///TODO
+    ///ADD CRUD FOR CARS USING OBJECT TYPE GENERIC REPOSITORY
+    CarHandling(std::string licensePlate,
+    std::string model,
+    std::string brand,
+    unsigned int firstRegistrationYear,
+    unsigned int mileage,
+    float dailyPrice,
+    std::string fuelType,
+    std::string transmission,
+    std::string color,
+    std::string observation,
+    bool isActive,
+    bool isDriving,
+    std::vector<Car> cars);
 
-    void changeCarSpecs(std::string numberPlate , std::string model , std::string carBrand , std::string buildYear , std::string mileage , float dailyPrice , std::string fuelType , std::string transmission , std::string color , std::string description);
+    void changeCarSpecs(std::string numberPlate, std::string model, std::string carBrand, std::string buildYear,
+                        std::string mileage, float dailyPrice, std::string fuelType, std::string transmission,
+                        std::string color, std::string description);
 
-    ~CarHandling(bool isDriving);
+    ~CarHandling();
 
     void carDeactivation(bool isActive);
 
-    std::string carSearch(bool isDriving);
+    bool carSearch(std::string numberPlate);
 
     std::string carSearchByPlateNumber(std::string numberPlate);
 
-    std::string serachSorted("carordering");
+    std::string searchSorted("carordering");
 
     bool valid(std::string numberPlate, std::string buildYear, std::string mileage, float dailyPrice);
-    
-    
+
 
 };
 
