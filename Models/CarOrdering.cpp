@@ -166,6 +166,13 @@ int CarOrdering::changeOrder(int orderNumber, Employee employee) {
     }
 }
 
+std::list <CarOrdering> CarOrdering::removeOrder(std::list<CarOrdering> repo, int orderNr) {
+    std::list<CarOrdering>aux;
+    for(CarOrdering obj: repo)
+        if(obj.orderNumber != orderNr)
+            aux.push_back(obj);
+    return aux;
+}
 
 void CarOrdering::showAllOrdersInASpecificTimeInterval(std::list<CarOrdering> repository, tm start, tm end) {
     std::list<CarOrdering> orderList;
@@ -262,3 +269,4 @@ int CarOrdering::determineOrderNumber(std::list<CarOrdering> repository) {
 
     return maxi + 1;
 }
+

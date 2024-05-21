@@ -58,6 +58,12 @@ public:
     //B.2 Nur Mitarbeiter durfen
     int changeOrder(int orderNumber,Employee employee);
 
+    //B.3.1 Reservierungen loschen
+    std::list <CarOrdering> removeOrder(std::list<CarOrdering> repo, int orderNr);
+
+
+
+
 
     //B.4 Auflisten der Bestellungen
     void showAllOrdersInASpecificTimeInterval(std::list<CarOrdering> repository, tm start, tm end);
